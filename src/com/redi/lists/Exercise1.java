@@ -16,12 +16,8 @@ public class Exercise1 {
 
         train.addFirst("locomotive");
 
-        for (int i = 0; i < train.size(); i++) {
-            System.out.print(train.get(i) + " ");
+        for (String node : train) {
+            System.out.print(node + " ");
         }
-
-        System.out.println();
-
-        train.forEach(it -> System.out.print(it + " "));
     }
 }

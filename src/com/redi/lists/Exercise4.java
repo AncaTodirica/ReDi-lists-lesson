@@ -10,10 +10,13 @@ public class Exercise4 {
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> matrix = generateMatrix(5);
 
+        //iterate trough the rows
         for (int i = 0; i < matrix.size(); i++) {
-            ArrayList<Integer> col = matrix.get(i);
-            for (int j = 0; j < col.size(); j++) {
-                System.out.print(col.get(j) + " ");
+            //get row one by one at position i
+            ArrayList<Integer> row = matrix.get(i);
+            // iterate trough the items of the row (columns) and print
+            for (int j = 0; j < row.size(); j++) {
+                System.out.print(row.get(j) + " ");
             }
             System.out.println();
         }
@@ -22,12 +25,14 @@ public class Exercise4 {
 
     public static ArrayList<ArrayList<Integer>> generateMatrix(int size) {
         ArrayList<ArrayList<Integer>> matrix = new ArrayList<>(size);
-        for (int i = 1; i <= size; i++) {
-            ArrayList<Integer> column = new ArrayList<>(i);
-            for (int j = 1; j <= i; j++) {
-                column.add(0);
+        //iterate trough the number of rows
+        for (int i = 0; i < size; i++) {
+            // create a new ArrayList for each row, with i number of items
+            ArrayList<Integer> row = new ArrayList<>(i);
+            for (int j = 0; j <= i; j++) {
+                row.add(0);
             }
-            matrix.add(column);
+            matrix.add(row);
         }
         return matrix;
     }
